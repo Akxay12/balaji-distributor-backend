@@ -11,14 +11,14 @@ import java.util.Optional;
 public interface BasketItemRepo
         extends JpaRepository<BasketItem, Long> {
 
-    List<BasketItem> findByBasketId(Long basketId);
+    List<BasketItem> findByBasket_Id(Long basketId);
 
-    Optional<BasketItem> findByBasketIdAndProductId(
+    Optional<BasketItem> findByBasket_IdAndProduct_Id(
             Long basketId,
             Long productId
     );
 
     @Modifying
     @Transactional
-    void deleteByBasketId(Long basketId);
+    void deleteByBasket_Id(Long basketId);
 }
