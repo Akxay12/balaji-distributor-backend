@@ -85,10 +85,10 @@ public class OrderService {
         // ITEMS
 
         List<BasketItem> basketItems =
-                basketItemRepo
-                        .findByBasketId(
-                                basketId
-                        );
+        basketItemRepo
+                .findByBasket_Id(
+                        basketId
+                );
 
         if (!basket.getUser().getId().equals(userId)) {
 
