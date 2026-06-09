@@ -48,11 +48,11 @@ public class CheckoutService {
             );
         }
 
-        List<BasketItem> basketItems =
-                basketItemRepo
-                        .findByBasketId(
-                                basket.getId()
-                        );
+       List<BasketItem> basketItems =
+        basketItemRepo
+                .findByBasket_Id(
+                        basket.getId()
+                );
 
         // SUBTOTAL
 
