@@ -179,13 +179,13 @@ public class BasketService {
             );
         }
 
-        basketItemRepo.deleteByBasketId(
-                basketId
-        );
+basketItemRepo.deleteByBasket_Id(
+        basketId
+);
 
-        basketRepo.deleteById(
-                basketId
-        );
+basketRepo.deleteById(
+        basketId
+);
     }
 
     //======================================================
@@ -225,10 +225,10 @@ public class BasketService {
         // CHECK EXISTING ITEM
         BasketItem basketItem =
                 basketItemRepo
-                        .findByBasketIdAndProductId(
-                                basket.getId(),
-                                product.getId()
-                        )
+        .findByBasket_IdAndProduct_Id(
+                basket.getId(),
+                product.getId()
+        )
                         .orElse(null);
 
         // UPDATE EXISTING
@@ -305,10 +305,10 @@ public class BasketService {
 
         BasketItem basketItem =
                 basketItemRepo
-                        .findByBasketIdAndProductId(
-                                basketId,
-                                productId
-                        )
+        .findByBasket_IdAndProduct_Id(
+                basketId,
+                productId
+        )
                         .orElseThrow(() ->
                                 new ResourceNotFoundException(
                                         "Basket item not found"
@@ -350,10 +350,10 @@ public class BasketService {
 
         BasketItem basketItem =
                 basketItemRepo
-                        .findByBasketIdAndProductId(
-                                request.getBasketId(),
-                                request.getProductId()
-                        )
+        .findByBasket_IdAndProduct_Id(
+                request.getBasketId(),
+                request.getProductId()
+        )
                         .orElseThrow(() ->
                                 new ResourceNotFoundException(
                                         "Item not found"
@@ -398,9 +398,9 @@ public class BasketService {
             );
         }
 
-        basketItemRepo.deleteByBasketId(
-                basket.getId()
-        );
+        basketItemRepo.deleteByBasket_Id(
+        basket.getId()
+);
     }
 
 
