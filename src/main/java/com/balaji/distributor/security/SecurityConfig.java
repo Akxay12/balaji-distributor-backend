@@ -42,24 +42,30 @@ public class SecurityConfig{
 
                 .authorizeHttpRequests(auth ->
 
-                        auth
+        auth
 
-                                .requestMatchers(
+                .requestMatchers(
+                        HttpMethod.OPTIONS,
+                        "/**"
+                )
+                .permitAll()
 
-                                        "/users/signup",
+                .requestMatchers(
 
-                                        "/users/login",
+                        "/users/signup",
 
-                                        "/products/view_all",
+                        "/users/login",
 
-                                        "/banner/get",
+                        "/products/view_all",
 
-                                        "/help/user/sendrequest",
+                        "/banner/get",
 
-                                        "/checkout-session/public/**"
+                        "/help/user/sendrequest",
 
-                                )
-                                .permitAll()
+                        "/checkout-session/public/**"
+
+                )
+                .permitAll()
 
 
 
